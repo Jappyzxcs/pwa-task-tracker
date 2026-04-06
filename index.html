@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Task Tracker</title>
     
-<link rel="stylesheet" href="styles.css">    
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f3e8ff">
+    
+    <link rel="apple-touch-icon" href="./x192.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#f3e8ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="container">
         <h1>My Tasks</h1>
+        
         <div class="input-area">
             <input type="text" id="taskInput" placeholder="Add a new task...">
             <button id="addTaskBtn">Add</button>
         </div>
+        
+        <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-bottom: 10px;">
+            💡 Tap a task's text to mark it as complete
+        </p>
+
         <ul id="taskList">
             </ul>
     </div>
 
-    <link rel="manifest" href="./manifest.json">
     <script src="./app.js"></script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('SW registered!', reg))
-        .catch(err => console.log('SW failed!', err));
-    });
-  }
-</script>
     
-    </body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW registered!', reg))
+            .catch(err => console.log('SW failed!', err));
+        });
+      }
+    </script>
+</body>
 </html>
