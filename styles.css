@@ -1,82 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #f4f4f9;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%); /* Soft modern gradient */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #334155;
 }
 
 .container {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    backdrop-filter: blur(10px);
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
 }
 
 .input-area {
     display: flex;
-    gap: 10px;
-    margin-bottom: 1.5rem;
+    gap: 12px;
+    margin-bottom: 2rem;
 }
 
 input[type="text"] {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
     font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #f8fafc;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+input[type="text"]:focus {
+    border-color: #6366f1; /* Indigo focus ring */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+button#addTaskBtn {
+    padding: 14px 24px;
+    background-color: #6366f1; /* Indigo button */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.25);
 }
 
-button:hover {
-    background-color: #45a049;
+button#addTaskBtn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(99, 102, 241, 0.3);
+}
+
+button#addTaskBtn:active {
+    transform: translateY(0);
 }
 
 ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 li {
-    background: #eee;
-    margin-bottom: 10px;
-    padding: 12px;
-    border-radius: 5px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    animation: slideIn 0.3s ease forwards; /* Smooth animation when adding */
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .delete-btn {
-    background-color: #ff4d4d;
-    padding: 5px 10px;
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .delete-btn:hover {
-    background-color: #cc0000;
+    background-color: #ef4444;
+    color: white;
+}
+
+/* The animation keyframes */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
