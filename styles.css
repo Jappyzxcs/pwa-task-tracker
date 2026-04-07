@@ -159,6 +159,24 @@ li.completed .task-text {
     text-decoration: line-through;
 }
 
+/* --- MOBILE RESPONSIVENESS FIXES --- */
+body {
+    padding: 16px; /* Keeps the box from touching the edge of the phone */
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem; /* Slightly less inner space on phones */
+    }
+    
+    .input-area {
+        flex-direction: column; /* Stacks the button under the input on tiny screens */
+    }
+    
+    button#addTaskBtn {
+        width: 100%; /* Makes the button full width when stacked */
+    }
+}
 li.completed .delete-btn {
     opacity: 0.5;
 }
